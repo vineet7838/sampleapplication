@@ -1,0 +1,3 @@
+replica: 2
+image: dtr.nagarro.com:433/i_vineetagarwal_master
+nodePort: 30157
