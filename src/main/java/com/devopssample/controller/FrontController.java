@@ -14,7 +14,7 @@ public class FrontController{
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public ModelAndView getHomeView(HttpServletRequest request) {
 		ModelAndView model = new ModelAndView("home");
-System.out.println("Hello I'm in feature")
+System.out.println("Hello I'm in feature");
 		return model;
 	}
 
