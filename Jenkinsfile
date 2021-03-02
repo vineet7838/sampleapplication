@@ -8,9 +8,9 @@ pipeline {
 	options{
 	
 
-	timeout(time:1 ,unit : 'Hours')
+	timeout( time : 1 ,unit: 'HOURS')
 	skipDefaultCheckout()
-	buildDiscarder(logRotator(sayToKeepStr: '10',numToKeepStr:'10'))
+	buildDiscarder(logRotator(daysToKeepStr: '10',numToKeepStr:'10'))
 	disableConcurrentBuilds()
 	
 	}
