@@ -5,6 +5,11 @@ pipeline {
 		string (name: 'dockerPort', 'defaultValue': '6000');
 
 	}
+	
+	tools{
+	maven 'Maven3'
+	jdk 'Java'
+	}
 	options{
 	
 
