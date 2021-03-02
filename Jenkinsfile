@@ -20,7 +20,7 @@ pipeline {
 		stage('Checkout'){
 			steps{
 				echo "STEP - Checkout branch"
-				checkout scm -b develop
+				checkout scm 
 				}
 		}
 		
