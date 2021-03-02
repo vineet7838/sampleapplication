@@ -20,7 +20,7 @@ pipeline {
 		stage('Checkout'){
 			steps{
 				echo "STEP - Checkout branch"
-				checkout scm
+				checkout scm -b develop
 				}
 		}
 		
@@ -38,7 +38,7 @@ pipeline {
 				}
 		}
 		
-		stage('Sonar Amalysis'){
+		stage('Sonar Analysis'){
 			steps{
 				echo "STEP - Run the Sonar Qube analysis on the taret branch"
 				withSonarQubeEnv("Test_Sonar")
