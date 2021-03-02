@@ -53,7 +53,7 @@ pipeline {
 				echo "STEP - Upload the artifact to artifactory"
 				
 				rtMavenDeployer(
-				id : 'deployer'
+				id : 'deployer',
 				serverId: '123456789@artifactory',
 				releaseRepo: 'CI-Automation-JAVA',
 				snapshotRepo: 'CI-Automation-JAVA'
