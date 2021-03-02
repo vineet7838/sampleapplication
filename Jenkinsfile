@@ -48,6 +48,38 @@ pipeline {
 				}
 		}
 		
+		stage('Upload to Artifactory'){
+			steps{
+				echo "STEP - Upload the artifact to artifactory"
+				
+				rtMavenDeployer(
+				id : 'deployer'
+				serverId: '123456789@artifactory',
+				releaseRepo: 'CI-Automation-JAVA',
+				snapshotRepo: 'CI-Automation-JAVA'
+				)
+				
+				rtMavenRun(
+				pom: 'pom.xml',
+				goals: ' clean install ',
+				deployerId: 'deployer' 				
+				
+				)
+				rtPublishBuildInfo(
+				serverId : '123456789@artifactory'
+				)
+				
+				}
+		}
+		
+		stage('Docker Image'){
+		steps{
+				echo "STEP - Build the docker image"
+				bat "docker build -t Build1 --no-cache -f Dockerfile ."
+				}
+		}
+		
+		
 		
 	}
 }
